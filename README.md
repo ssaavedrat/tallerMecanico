@@ -5,8 +5,9 @@
 
 1. Creación de páginas estáticas home, about
 2. Creación de scaffold para contacto
+3. Creacion de modelo de usuario
 
-3. Agregar 
+4. Agregar 
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
