@@ -1,5 +1,12 @@
 # README
 
+
+## Pasos Generales
+
+1. Creación de páginas estáticas home, about
+2. Creación de scaffold para contacto
+
+3. Agregar 
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
