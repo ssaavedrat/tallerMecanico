@@ -16,7 +16,7 @@ Bienvenido al repositorio del Taller Mecánico "El Tuercas". Este proyecto repre
 
 ![Alt text](image-1.png)
 
-### Pasos Generales
+## Pasos Generales
 
 1. Creación de páginas estáticas home, about
 2. Creación de scaffold para contacto
