@@ -1,0 +1,30 @@
+# == Schema Information
+#
+# Table name: reparations
+#
+#  id          :bigint           not null, primary key
+#  vehicle_id  :bigint           not null
+#  service_id  :bigint           not null
+#  status      :integer          default(0)
+#  start_time  :datetime
+#  end_time    :datetime
+#  observation :text
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+one:
+  vehicle: one
+  service: one
+  status: 1
+  start_time: 2023-10-13 11:47:44
+  end_time: 2023-10-13 11:47:44
+  observation: MyText
+
+two:
+  vehicle: two
+  service: two
+  status: 1
+  start_time: 2023-10-13 11:47:44
+  end_time: 2023-10-13 11:47:44
+  observation: MyText

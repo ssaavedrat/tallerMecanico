@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :reparations
   resources :vehicles
   devise_for :users, controllers: { registrations: 'registrations' },
                       path: '',

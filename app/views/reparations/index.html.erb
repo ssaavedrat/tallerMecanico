@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Reparations</h1>
+
+<div id="reparations">
+  <% @reparations.each do |reparation| %>
+    <%= render reparation %>
+    <p>
+      <%= link_to "Show this reparation", reparation %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New reparation", new_reparation_path %>

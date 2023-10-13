@@ -15,7 +15,5 @@ puts 'Importing vehicles...'
       car_issue: Faker::Lorem.sentence
     )
   end
-  
-  puts "50 ejemplos de Vehículos creados correctamente."
 
 puts 'Vehicles imported successfully!'
