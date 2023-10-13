@@ -21,6 +21,7 @@ class Reparation < ApplicationRecord
   validates :service_id, presence: true
   validates :start_time, presence: true
   validates :end_time, presence: true
+  validates :status, presence: true
 
   # Enums
   enum status: { pending: 0, finished: 1}

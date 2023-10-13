@@ -1,37 +1,13 @@
-<div id="<%= dom_id vehicle %>">
-  <p>
-    <strong>User:</strong>
-    <%= vehicle.user_id %>
-  </p>
-
-  <p>
-    <strong>Plate:</strong>
-    <%= vehicle.plate %>
-  </p>
-
-  <p>
-    <strong>Brand:</strong>
-    <%= vehicle.brand %>
-  </p>
-
-  <p>
-    <strong>Model:</strong>
-    <%= vehicle.model %>
-  </p>
-
-  <p>
-    <strong>Year:</strong>
-    <%= vehicle.year %>
-  </p>
-
-  <p>
-    <strong>Color:</strong>
-    <%= vehicle.color %>
-  </p>
-
-  <p>
-    <strong>Car issue:</strong>
-    <%= vehicle.car_issue %>
-  </p>
-
+<div class="col">
 </div>
+  <div class="card bg-light" id="<%= dom_id vehicle %>">
+    <h5 class="card-header text-center mb-3"><strong>Vehículo (Patente):</strong> <%= vehicle.plate %></h5>
+    <div class="card-body">
+      <p class="card-title"><strong>Dueño:</strong> <%= vehicle.user.name %></p>
+      <p class="card-text"><strong>Marca:</strong> <%= vehicle.brand %></p>
+      <p class="card-text"><strong>Modelo:</strong> <%= vehicle.model %></p>
+      <p class="card-text"><strong>Año:</strong> <%= vehicle.year %></p>
+      <p class="card-text"><strong>Color:</strong> <%= vehicle.color %></p>
+      <p class="card-text"><strong>Problema:</strong> <%= vehicle.car_issue %></p>
+    </div>
+  </div>

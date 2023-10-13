@@ -1,14 +1,28 @@
 <p style="color: green"><%= notice %></p>
-
-<h1>Reparations</h1>
-
-<div id="reparations">
-  <% @reparations.each do |reparation| %>
-    <%= render reparation %>
-    <p>
-      <%= link_to "Show this reparation", reparation %>
-    </p>
+<h1>Servicios y Reparaciones</h1>
+<%= link_to "Nueva reparación", new_reparation_path %>
+<div class="my-5 row row-cols-1 row-cols-md-3 g-4">
+  <% @reparations.each do |reparation|%>
+    <div class="col">
+      <div class="card text-center bg-light" id="<%= dom_id reparation %>">
+        <h5 class="card-header text-center mb-3"><strong>Vehículo (Patente):</strong> <%= reparation.vehicle.plate %></h5>
+        <div class="card-body">
+          <p class="card-title"><strong>Dueño:</strong> <%= reparation.vehicle.user.name %></p>
+          <p class="card-text"><strong>Servicio:</strong> <%= reparation.service.name %></p>
+          <p class="card-text"><strong>Ingreso:</strong> <%= reparation.start_time.strftime("%Y/%m/%d %H:%M") %></p>
+          <p class="card-text"><strong>Entrega (Estimado):</strong> <%= reparation.end_time.strftime("%Y/%m/%d %H:%M") %></p>
+          <p class="card-text"><strong>Observación:</strong> <%= reparation.observation %></p>
+          <p>
+            <%= link_to "Ver", reparation, class:"btn btn-info" %>
+          </p>
+        </div>
+        <div class="card-footer">
+          <strong>Estado: </strong><%= reparation.status%>
+        </div>
+      </div>
+    </div>
   <% end %>
 </div>
-
-<%= link_to "New reparation", new_reparation_path %>
+<div class="d-flex justify-content-center">
+  <%== pagy_bootstrap_nav(@pagy) %>
+</div>

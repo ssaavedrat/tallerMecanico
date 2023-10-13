@@ -2,9 +2,12 @@
 
 <%= render @reparation %>
 
-<div>
-  <%= link_to "Edit this reparation", edit_reparation_path(@reparation) %> |
-  <%= link_to "Back to reparations", reparations_path %>
+<div class="mt-3">
 
-  <%= button_to "Destroy this reparation", @reparation, method: :delete %>
+<div class="d-flex justify-content-around">
+  <%= button_to "Editar esta reparación", edit_reparation_path(@reparation), method: :get, class: "btn btn-primary" %>
+  <%= button_to "Volver a las reparaciones", reparations_path, method: :get, class: "btn btn-secondary" %>
+  <%= button_to "Eliminar esta reparación", @reparation, method: :delete, data: { confirm: "¿Estás seguro?" }, class: "btn btn-danger"%>
+</div>
+
 </div>

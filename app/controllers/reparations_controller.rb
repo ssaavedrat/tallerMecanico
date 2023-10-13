@@ -1,9 +1,16 @@
 class ReparationsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_reparation, only: %i[ show edit update destroy ]
 
   # GET /reparations or /reparations.json
   def index
-    @reparations = Reparation.all
+    # if user is admin, show all reparations
+    if current_user.admin?
+      @pagy, @reparations = pagy(Reparation.all)
+    else
+      # if user is not admin, show only his reparations
+      @reparations = Reparation.where(user_id: current_user.id)
+    end
   end
 
   # GET /reparations/1 or /reparations/1.json

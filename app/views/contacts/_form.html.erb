@@ -1,8 +1,7 @@
-<%= form_with(model: contact) do |form| %>
+<%= form_with(model: contact, html: { class: "form" }) do |form| %>
   <% if contact.errors.any? %>
-    <div style="color: red">
+    <div class="alert alert-danger">
       <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
-
       <ul>
         <% contact.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -11,22 +10,22 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name, required: true %>
+  <div class="mb-3">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class: "form-control", required: true %>
   </div>
 
-  <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.email_field :email, required: true %>
+  <div class="mb-3">
+    <%= form.label :email, class: "form-label" %>
+    <%= form.email_field :email, class: "form-control", required: true %>
   </div>
 
-  <div>
-    <%= form.label :message, style: "display: block" %>
-    <%= form.text_area :message, required: true %>
+  <div class="mb-3">
+    <%= form.label :message, class: "form-label" %>
+    <%= form.text_area :message, class: "form-control", required: true %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="mb-3">
+    <%= form.submit "Enviar", class: "btn btn-primary" %>
   </div>
 <% end %>

@@ -1,32 +1,14 @@
-<div id="<%= dom_id reparation %>">
-  <p>
-    <strong>Vehicle:</strong>
-    <%= reparation.vehicle_id %>
-  </p>
-
-  <p>
-    <strong>Service:</strong>
-    <%= reparation.service_id %>
-  </p>
-
-  <p>
-    <strong>Status:</strong>
-    <%= reparation.status %>
-  </p>
-
-  <p>
-    <strong>Start time:</strong>
-    <%= reparation.start_time %>
-  </p>
-
-  <p>
-    <strong>End time:</strong>
-    <%= reparation.end_time %>
-  </p>
-
-  <p>
-    <strong>Observation:</strong>
-    <%= reparation.observation %>
-  </p>
-
+<div class="col">
+</div>
+<div class="card bg-light" id="<%= dom_id reparation %>">
+  <h5 class="card-header text-center mb-3"><strong>Vehículo (Patente):</strong> <%= reparation.vehicle.plate %></h5>
+  <div class="card-body">
+    <p class="card-title"><strong>Dueño:</strong> <%= reparation.vehicle.user.name %></p>
+    <p class="card-text"><strong>Servicio:</strong> <%= reparation.service.name %></p>
+    <p class="card-text"><strong>Ingreso:</strong> <%= reparation.start_time.strftime("%Y/%m/%d %H:%M") %></p>
+    <p class="card-text"><strong>Entrega (Estimado):</strong> <%= reparation.end_time.strftime("%Y/%m/%d %H:%M") %></p>
+    <p class="card-text"><strong>Observación:</strong> <%= reparation.observation %></p>
+    <p class="card-text display-5 text-center"><strong>Estado:</strong> <%= reparation.status %></p>
+    <%# reparation.status %>
+  </div>
 </div>

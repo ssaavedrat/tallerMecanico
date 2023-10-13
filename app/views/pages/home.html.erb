@@ -1,2 +1,30 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container my-5">
+  <div class="row">
+    <div class="col-lg-6">
+      <h1 class="display-4">Bienvenido a Taller Mecánico "El Tuercas"</h1>
+      <p class="lead">Tu destino confiable para servicios de reparación de vehículos. Ofrecemos soluciones integrales para mantener tu vehículo en óptimas condiciones.</p>
+      <%# button_to contact_path %>
+        <%= link_to "Contacto", contact_path, class: "btn btn-primary btn-lg" %>
+    </div>
+    <div class="col-lg-6">
+      <img src="https://picsum.photos/500" class="img-fluid rounded" alt="Taller El Tuercas">
+    </div>
+  </div>
+
+  <hr class="my-5">
+
+  <div class="row">
+    <div class="col-lg-4">
+      <h2>Servicios Profesionales</h2>
+      <p>Nuestro equipo de técnicos altamente capacitados se dedica a proporcionar servicios de calidad para una variedad de problemas mecánicos y mantenimiento preventivo.</p>
+    </div>
+    <div class="col-lg-4">
+      <h2>Clientes Satisfechos</h2>
+      <p>La satisfacción del cliente es nuestra máxima prioridad. Confiar en "El Tuercas" significa confiar en un servicio honesto y confiable para tu vehículo.</p>
+    </div>
+    <div class="col-lg-4">
+      <h2>Contacto</h2>
+      <p>Estamos aquí para ayudarte. ¡Contáctanos para programar una cita o hacer cualquier pregunta que puedas tener sobre nuestros servicios!</p>
+    </div>
+  </div>
+</div>

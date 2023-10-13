@@ -2,9 +2,13 @@
 
 <%= render @vehicle %>
 
-<div>
-  <%= link_to "Edit this vehicle", edit_vehicle_path(@vehicle) %> |
-  <%= link_to "Back to vehicles", vehicles_path %>
+<div class="mt-3">
 
-  <%= button_to "Destroy this vehicle", @vehicle, method: :delete %>
+<div class="d-flex justify-content-around">
+  <%= button_to "Editar este vehículo", edit_vehicle_path(@vehicle), method: :get, class: "btn btn-primary" %>
+  <%= button_to "Volver a los vehículos", vehicles_path, method: :get, class: "btn btn-secondary" %>
+  <%= button_to "Eliminar este vehículo", @vehicle, method: :delete, data: { confirm: "¿Estás seguro?" }, class: "btn btn-danger"%>
+
+</div>
+
 </div>

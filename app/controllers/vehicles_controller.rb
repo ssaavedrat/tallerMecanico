@@ -1,9 +1,17 @@
 class VehiclesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_vehicle, only: %i[ show edit update destroy ]
 
   # GET /vehicles or /vehicles.json
   def index
-    @vehicles = Vehicle.all
+    # if user is admin, show all vehicles
+    if current_user.admin?
+      # @vehicles = Vehicle.all
+      @pagy, @vehicles = pagy(Vehicle.all)
+    else
+      # if user is not admin, show only his vehicles
+      @vehicles = Vehicle.where(user_id: current_user.id)
+    end
   end
 
   # GET /vehicles/1 or /vehicles/1.json

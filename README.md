@@ -15,9 +15,11 @@
    1. Simular vehículos con seeds
 7. Creación de scaffold de Reparaciones
    1. Simular reparaciones con seeds
+8. Vistas y controladores.
 
 
-7. Agregar 
+
+9.  Agregar 
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

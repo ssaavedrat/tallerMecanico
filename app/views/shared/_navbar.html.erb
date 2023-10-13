@@ -16,6 +16,11 @@
         <li class="nav-item">
           <%= link_to "Contacto", new_contact_path, class: "nav-link" %>
         </li>
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "Vehículos", vehicles_path, class: "nav-link" %>
+          </li>
+        <% end %>
       </ul>
     </div>
     <div>
@@ -35,7 +40,6 @@
               <%= button_to "Cerrar sesión", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </div>
-          
         <% else %>
           <li>
             <%= link_to 'Iniciar sesión', new_user_session_path, class: 'text-decoration-none text-black' %>
