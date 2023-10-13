@@ -17,11 +17,15 @@
           <%= link_to "Contacto", new_contact_path, class: "nav-link" %>
         </li>
         <% if user_signed_in? %>
+          <%# if is admin print hello world %>
+          <% if current_user.admin? %>
+            <li class="nav-item">
+              <%= link_to "Registro Cliente", new_user_registration_path, class: "nav-link ms-3 border border-primary rounded" %>
+            </li>
+          <% end %>
           <li class="nav-item">
-            <%= link_to "Vehículos", vehicles_path, class: "nav-link ms-3 border border-primary rounded" %>
+            <%= link_to "Vehículos", vehicles_path, class: "nav-link ms-1 border border-primary rounded" %>
           </li>
-        <% end %>
-        <% if user_signed_in? %>
           <li class="nav-item">
             <%= link_to "Reparaciones y Servicios", reparations_path, class: "nav-link ms-1 border border-secondary rounded" %>
           </li>

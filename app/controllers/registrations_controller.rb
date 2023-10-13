@@ -1,5 +1,8 @@
 class RegistrationsController < Devise::RegistrationsController
     before_action :configure_permitted_parameters, if: :devise_controller?
+    before_action :authenticate_user! 
+    before_action :redirect_unless_admin, only: [:new, :create]
+    skip_before_action :require_no_authentication
     protect_from_forgery with: :exception
   
     protected
@@ -12,4 +15,14 @@ class RegistrationsController < Devise::RegistrationsController
       devise_parameter_sanitizer.permit :account_update, keys: added_attrs
     end
   
+    def redirect_unless_admin
+      unless current_user.admin?
+        flash[:alert] = "You must be an admin to do that."
+        redirect_to root_path
+      end
+    end
+
+    def sign_up(resource_name, resource)
+        true
+    end
   end
