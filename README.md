@@ -11,8 +11,13 @@
 4. Creación de vistas de Usuario
 5. Creación de modelo de Servicios
    1. Simular servicios con seeds
+6. Creación del scaffold de Vehicle
+   1. Simular vehículos con seeds
+7. Creación de scaffold de Reparaciones
+   1. Simular reparaciones con seeds
 
-6. Agregar 
+
+7. Agregar 
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

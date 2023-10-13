@@ -27,5 +27,8 @@ class User < ApplicationRecord
   # Enums
   enum role: { customer: 0, admin: 1 }
 
+  # Associations
+  has_many :vehicles, dependent: :destroy
+
 end
  
