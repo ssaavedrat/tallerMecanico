@@ -1,6 +1,6 @@
-<%= form_with(model: reparation) do |form| %>
+<%= form_with(model: reparation, local: true, class: "mt-4") do |form| %>
   <% if reparation.errors.any? %>
-    <div style="color: red">
+    <div class="alert alert-danger">
       <h2><%= pluralize(reparation.errors.count, "error") %> prohibited this reparation from being saved:</h2>
       <ul>
         <% reparation.errors.each do |error| %>
@@ -9,35 +9,45 @@
       </ul>
     </div>
   <% end %>
-  <div>
-    <%= form.label :vehicle_id, style: "display: block" %>
-    <%= form.select :vehicle_id, Vehicle.order(:plate).map { |vehicle| [vehicle.plate, vehicle.id] }, { include_blank: false } %>
+
+  <div class="mb-3">
+    <%= form.label :vehicle_id, class: "form-label" %>
+    <%= form.select :vehicle_id, Vehicle.order(:plate).map { |vehicle| [vehicle.plate, vehicle.id] }, { include_blank: false }, class: "form-select" %>
   </div>
-  <div>
-    <%= form.label :service_id, style: "display: block" %>
-    <%= form.select :service_id, Service.all.collect {|service| [service.name, service.id]}, {include_blank: false} %>
+
+  <div class="mb-3">
+    <%= form.label :service_id, class: "form-label" %>
+    <%= form.select :service_id, Service.all.collect {|service| [service.name, service.id]}, {include_blank: false}, class: "form-select" %>
   </div>
-  <%# Radio button for status considering is an enum %>
-  <div>
-    <%= form.label :status, style: "display: block" %>
-    <%= form.radio_button :status, 'pending' %>
-    <%= form.label :status, "Pendiente" %>
-    <%= form.radio_button :status, "finished" %>
-    <%= form.label :status, "Finalizado" %>
+
+  <div class="mb-3">
+    <%= form.label :status, class: "form-label" %>
+    <div class="form-check">
+      <%= form.radio_button :status, 'pending', class: "form-check-input" %>
+      <%= form.label :status, "Pendiente", class: "form-check-label" %>
+    </div>
+    <div class="form-check">
+      <%= form.radio_button :status, "finished", class: "form-check-input" %>
+      <%= form.label :status, "Finalizado", class: "form-check-label" %>
+    </div>
   </div>
-  <div>
-    <%= form.label :start_time, style: "display: block" %>
-    <%= form.datetime_field :start_time %>
+
+  <div class="mb-3">
+    <%= form.label :start_time, class: "form-label" %>
+    <%= form.datetime_field :start_time, class: "form-control" %>
   </div>
-  <div>
-    <%= form.label :end_time, style: "display: block" %>
-    <%= form.datetime_field :end_time %>
+
+  <div class="mb-3">
+    <%= form.label :end_time, class: "form-label" %>
+    <%= form.datetime_field :end_time, class: "form-control" %>
   </div>
-  <div>
-    <%= form.label :observation, style: "display: block" %>
-    <%= form.text_area :observation %>
+
+  <div class="mb-3">
+    <%= form.label :observation, class: "form-label" %>
+    <%= form.text_area :observation, class: "form-control", rows: 4 %>
   </div>
-  <div>
-    <%= form.submit %>
+
+  <div class="mb-3">
+    <%= form.submit "Save", class: "btn btn-primary" %>
   </div>
 <% end %>

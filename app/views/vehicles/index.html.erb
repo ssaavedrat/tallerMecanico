@@ -1,6 +1,9 @@
 <p style="color: green"><%= notice %></p>
-<h1>Vehicles</h1>
-<%= link_to "New vehicle", new_vehicle_path %>
+<h1 class='mb-5'>Vehículos</h1>
+<%# If admin print "hello world" %>
+<% if current_user.admin? %>
+  <%= link_to "Enrolar nuevo vehículo", new_vehicle_path, class:'btn btn-primary' %>
+<% end %>
 <div class="my-5 row row-cols-1 row-cols-md-3 g-4">
   <% @vehicles.each do |vehicle|%>
     <div class="col">
@@ -15,7 +18,7 @@
           <p class="card-text"><strong>Problema:</strong> <%= vehicle.car_issue %></p>
         </div>
         <p>
-          <%= link_to "Show this vehicle", vehicle, class:"btn btn-primary" %>
+          <%= link_to "Ver", vehicle, class:"btn btn-primary" %>
         </p>
       </div>
     </div>

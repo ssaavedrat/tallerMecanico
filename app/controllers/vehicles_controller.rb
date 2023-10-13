@@ -10,7 +10,7 @@ class VehiclesController < ApplicationController
       @pagy, @vehicles = pagy(Vehicle.all)
     else
       # if user is not admin, show only his vehicles
-      @vehicles = Vehicle.where(user_id: current_user.id)
+      @pagy, @vehicles = pagy(Vehicle.where(user_id: current_user.id))
     end
   end
 

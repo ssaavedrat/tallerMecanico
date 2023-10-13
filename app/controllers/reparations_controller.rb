@@ -9,9 +9,11 @@ class ReparationsController < ApplicationController
       @pagy, @reparations = pagy(Reparation.all)
     else
       # if user is not admin, show only his reparations
-      @reparations = Reparation.where(user_id: current_user.id)
+      @pagy, @reparations = pagy(Reparation.joins(vehicle: :user).where(users: { id: current_user.id }))
     end
   end
+  
+  
 
   # GET /reparations/1 or /reparations/1.json
   def show
@@ -74,4 +76,5 @@ class ReparationsController < ApplicationController
     def reparation_params
       params.require(:reparation).permit(:vehicle_id, :service_id, :status, :start_time, :end_time, :observation)
     end
+
 end

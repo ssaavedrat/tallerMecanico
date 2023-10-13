@@ -18,7 +18,12 @@
         </li>
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to "Vehículos", vehicles_path, class: "nav-link" %>
+            <%= link_to "Vehículos", vehicles_path, class: "nav-link ms-3 border border-primary rounded" %>
+          </li>
+        <% end %>
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "Reparaciones y Servicios", reparations_path, class: "nav-link ms-1 border border-secondary rounded" %>
           </li>
         <% end %>
       </ul>

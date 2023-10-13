@@ -1,8 +1,7 @@
-<%= form_with(model: vehicle) do |form| %>
+<%= form_with(model: vehicle, class: "mt-4") do |form| %>
   <% if vehicle.errors.any? %>
-    <div style="color: red">
+    <div class="alert alert-danger">
       <h2><%= pluralize(vehicle.errors.count, "error") %> prohibited this vehicle from being saved:</h2>
-
       <ul>
         <% vehicle.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -11,44 +10,42 @@
     </div>
   <% end %>
 
-  <%# user by collection_select %>
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.collection_select :user_id, User.all, :id, :name %> 
+  <div class="mb-3">
+    <%= form.label :user_id, class: "form-label" %>
+    <%= form.collection_select :user_id, User.all, :id, :name, { include_blank: "Select User" }, class: "form-select" %>
   </div>
 
-
-  <div>
-    <%= form.label :plate, style: "display: block" %>
-    <%= form.text_field :plate %>
+  <div class="mb-3">
+    <%= form.label :plate, class: "form-label" %>
+    <%= form.text_field :plate, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :brand, style: "display: block" %>
-    <%= form.text_field :brand %>
+  <div class="mb-3">
+    <%= form.label :brand, class: "form-label" %>
+    <%= form.text_field :brand, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :model, style: "display: block" %>
-    <%= form.text_field :model %>
+  <div class="mb-3">
+    <%= form.label :model, class: "form-label" %>
+    <%= form.text_field :model, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :year, style: "display: block" %>
-    <%= form.number_field :year %>
+  <div class="mb-3">
+    <%= form.label :year, class: "form-label" %>
+    <%= form.number_field :year, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :color, style: "display: block" %>
-    <%= form.text_field :color %>
+  <div class="mb-3">
+    <%= form.label :color, class: "form-label" %>
+    <%= form.text_field :color, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :car_issue, style: "display: block" %>
-    <%= form.text_area :car_issue %>
+  <div class="mb-3">
+    <%= form.label :car_issue, class: "form-label" %>
+    <%= form.text_area :car_issue, class: "form-control", rows: 4 %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="mb-3">
+    <%= form.submit "Save", class: "btn btn-primary" %>
   </div>
 <% end %>
