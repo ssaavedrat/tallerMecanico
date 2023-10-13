@@ -17,6 +17,8 @@ class Reparation < ApplicationRecord
   belongs_to :service
 
   # Validations
+  validates :vehicle_id, presence: true
+  validates :service_id, presence: true
   validates :start_time, presence: true
   validates :end_time, presence: true
 
