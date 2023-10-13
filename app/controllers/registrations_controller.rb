@@ -12,7 +12,4 @@ class RegistrationsController < Devise::RegistrationsController
       devise_parameter_sanitizer.permit :account_update, keys: added_attrs
     end
   
-    def update_resource(resource, params)
-      resource.update_without_password(params)
-    end
   end

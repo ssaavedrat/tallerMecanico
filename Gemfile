@@ -78,3 +78,5 @@ gem "annotate", "~> 3.2"
 gem "devise", "~> 4.9"
 
 gem "faker", "~> 3.2"
+
+gem "rails_live_reload", "~> 0.3.4"

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :vehicles
   devise_for :users, controllers: { registrations: 'registrations' },
                       path: '',
-                      path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
+                      path_names: { sign_in: 'login', sign_up: 'register' }
   
 
   resources :contacts, only: %i[new create]
@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   root 'pages#home'
   get 'about', to: 'pages#about'
   get 'contact', to: 'contacts#new'
+
 
 end
