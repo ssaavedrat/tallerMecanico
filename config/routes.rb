@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :contacts
+  resources :contacts, only: %i[new create]
   get 'pages/home'
   get 'pages/about'
 
@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root 'pages#home'
   get 'sobre', to: 'pages#about'
+  get 'contacto', to: 'contacts#new'
 
 end
