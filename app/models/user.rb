@@ -23,5 +23,9 @@ class User < ApplicationRecord
   # Validations
   validates :name, presence: true
   validates :phone, presence: true
+
+  # Enums
+  enum role: { customer: 0, admin: 1 }
+
 end
  
