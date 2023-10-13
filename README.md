@@ -1,7 +1,22 @@
-# README
+# Taller Mecánico "El Tuercas"
 
+Bienvenido al repositorio del Taller Mecánico "El Tuercas". Este proyecto representa un sistema de gestión integral para un taller mecánico, diseñado para ayudar a organizar y administrar las reparaciones de vehículos de manera eficiente.
 
-## Pasos Generales
+## Base de Datos
+
+### Modelo Conceptual
+
+![Alt text](image.png)
+
+### Modelo Lógico
+
+![Alt text](image-2.png)
+
+### Modelo Físico
+
+![Alt text](image-1.png)
+
+### Pasos Generales
 
 1. Creación de páginas estáticas home, about
 2. Creación de scaffold para contacto
@@ -16,29 +31,25 @@
 7. Creación de scaffold de Reparaciones
    1. Simular reparaciones con seeds
 8. Vistas y controladores.
+   1. Restricción de vistas
+   2. Paginación
+   3. Sólo admin puede crear cuentas de usuario
 
+## Instrucciones específicas
 
+Para el llenado de la base de datos se debe ejercutar cada comando con el siguiente orden:
 
-9.  Agregar 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```bash
+    rails db:drop
+    rails db:create
+    rails db:migrate
+    rails runner 'load(File.join(Rails.root, "db", "seeds", "rb", "contacts.rb"))'
+    rails runner 'load(File.join(Rails.root, "db", "seeds", "rb", "users.rb"))'
+    rails runner 'load(File.join(Rails.root, "db", "seeds", "rb", "services.rb"))'
+    rails runner 'load(File.join(Rails.root, "db", "seeds", "rb", "vehicles.rb"))'
+    rails runner 'load(File.join(Rails.root, "db", "seeds", "rb", "reparations.rb"))'
+```
 
-Things you may want to cover:
+## Fe de Erratas
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+El scaffold 'Reparations' debería llamarse 'Repairs' (o similar) fue un lapsus del desarrollador 😅.
