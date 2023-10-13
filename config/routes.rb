@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'registrations' },
+                      path: '',
+                      path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
+  
+
   resources :contacts, only: %i[new create]
   get 'pages/home'
   get 'pages/about'
@@ -8,7 +12,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root 'pages#home'
-  get 'sobre', to: 'pages#about'
-  get 'contacto', to: 'contacts#new'
+  get 'about', to: 'pages#about'
+  get 'contact', to: 'contacts#new'
 
 end
